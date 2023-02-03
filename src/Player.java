@@ -6,9 +6,10 @@ public class Player {
     private int ballsBowled;
     private int wicketsTaken;
 
-    private boolean isOut;
+    private boolean isRemaining;
     public Player(String name){
         this.name=name;
+        this.isRemaining=true;
     }
 
     public String getName(){
@@ -35,8 +36,8 @@ public class Player {
         return wicketsTaken;
     }
 
-    public boolean getIsOut(){
-        return this.isOut;
+    public boolean getIsRemaining(){
+        return this.isRemaining;
     }
 
     public void setRunScored(int addRuns){
@@ -59,7 +60,7 @@ public class Player {
         this.wicketsTaken+=1;
     }
 
-    public void setIsOut(boolean bool){
-        this.isOut=bool;
+    public void setIsRemaining(boolean bool){
+        this.isRemaining=bool;
     }
 }

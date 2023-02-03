@@ -17,7 +17,7 @@ public class Team {
 
     public Team(int teamNumber){
         teamPlayers = new ArrayList<>();
-        for(int i=1;i<=11;i++){
+        for(int i=0;i<11;i++){
             String playerName = "team"+teamNumber+"player"+i;
             Player p = new Player(playerName);
             teamPlayers.add(p);
@@ -25,7 +25,9 @@ public class Team {
         }
 
         strikePlayer = teamPlayers.get(0);
+        teamPlayers.get(0).setIsRemaining(false);
         nonStrikePlayer = teamPlayers.get(1);
+        teamPlayers.get(1).setIsRemaining(false);
 
     }
 
@@ -75,5 +77,13 @@ public class Team {
 
     public void setTotalWicketsTaken() {
         this.totalWicketsTaken += 1;
+    }
+
+    public void printScoreCard(){
+        for(int i=0;i<11;i++){
+            System.out.println(this.teamPlayers.get(i).getName()+ " "
+                              + this.teamPlayers.get(i).getRunScored() + "/"
+                              + this.teamPlayers.get(i).getBallsPlayed());
+        }
     }
 }
